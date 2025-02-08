@@ -114,6 +114,13 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
     $ roslaunch scout_bringup scout_teleop_keyboard.launch
     ```
 
+* Start the scout_carrier
+
+    ```
+    $ rosrun scout_base serial_node
+    $ rosrun scout_base teleop_keyboard
+    ```
+
     **SAFETY PRECAUSION**: 
 
     The default command values of the keyboard teleop node are high, make sure you decrease the speed commands before starting to control the robot with your keyboard! Have your remote controller ready to take over the control whenever necessary. 
