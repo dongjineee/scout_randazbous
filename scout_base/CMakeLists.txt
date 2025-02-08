@@ -14,8 +14,9 @@ find_package(catkin REQUIRED COMPONENTS
     tf2_ros
     ugv_sdk
     scout_msgs
+    serial
 )
-    
+
 # find_package(Boost REQUIRED COMPONENTS chrono)
 
 ###################################
@@ -25,7 +26,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES scout_messenger
-  CATKIN_DEPENDS ugv_sdk scout_msgs
+  CATKIN_DEPENDS ugv_sdk scout_msgs serial
 #   DEPENDS Boost
 )
 
@@ -46,6 +47,12 @@ add_dependencies(scout_messenger ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 
 add_executable(scout_base_node src/scout_base_node.cpp)
 target_link_libraries(scout_base_node scout_messenger ${catkin_LIBRARIES})
+
+add_executable(serial_node src/serial_node.cpp)
+target_link_libraries(serial_node ${catkin_LIBRARIES})
+
+add_executable(teleop_keyboard src/teleop_keyboard.cpp)
+target_link_libraries(teleop_keyboard ${catkin_LIBRARIES})
 
 #############
 ## Install ##
