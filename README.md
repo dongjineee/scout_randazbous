@@ -114,7 +114,7 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
     $ roslaunch scout_bringup scout_teleop_keyboard.launch
     ```
 
-* Start the scout_carrier
+* Start the scout_carrier (randazbous)
 
     ```
     $ rosrun scout_base serial_node
